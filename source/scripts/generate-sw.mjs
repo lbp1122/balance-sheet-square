@@ -1,16 +1,24 @@
-const CACHE = "balance-sheet-square-mteg4he4";
+import { readdirSync, writeFileSync } from "node:fs";
+import { join, relative, sep } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const dist = fileURLToPath(new URL("../dist/", import.meta.url));
+
+function listFiles(directory) {
+  return readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
+    const absolute = join(directory, entry.name);
+    return entry.isDirectory() ? listFiles(absolute) : [absolute];
+  });
+}
+
+const files = listFiles(dist)
+  .map((file) => `./${relative(dist, file).split(sep).join("/")}`)
+  .filter((file) => file !== "./sw.js");
+const version = Date.now().toString(36);
+
+const serviceWorker = `const CACHE = "balance-sheet-square-${version}";
 const BASE = new URL("./", self.location.href).pathname;
-const PRECACHE = [
-  "./.nojekyll",
-  "./app-icon-192.png",
-  "./app-icon-512.png",
-  "./assets/index-BS2983XC.js",
-  "./assets/index-DNTMGFog.css",
-  "./favicon.svg",
-  "./index.html",
-  "./manifest.webmanifest",
-  "./privacy.html"
-];
+const PRECACHE = ${JSON.stringify(files, null, 2)};
 
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(PRECACHE)).then(() => self.skipWaiting()));
@@ -42,3 +50,6 @@ self.addEventListener("fetch", (event) => {
     return response;
   })));
 });
+`;
+
+writeFileSync(join(dist, "sw.js"), serviceWorker);
