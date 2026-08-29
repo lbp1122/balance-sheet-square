@@ -1,0 +1,20 @@
+{
+  "name": "Balance Sheet Square",
+  "short_name": "BSS",
+  "description": "An offline personal balance sheet calculator with proportional visualisation and financial ratios.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fff2a8",
+  "theme_color": "#f8d54b",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
