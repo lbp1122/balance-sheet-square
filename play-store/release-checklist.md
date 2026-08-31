@@ -1,6 +1,6 @@
 # Google Play release checklist
 
-1. Wait for Play Console identity verification to finish and verify the contact phone number.
+1. **Completed 31 August 2026:** Play Console identity and contact phone number verified.
 2. Create a dedicated public support email, add it to the Play listing and privacy policy, then create the app with package ID `com.lbp.balancesheetsquare`.
 3. Complete App access, Ads, Content rating, Target audience, Data safety, Financial features, and Government apps declarations.
 4. Use the entries in `store-listing.md`; upload the icon, feature graphic, and phone screenshots.
