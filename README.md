@@ -1,44 +1,31 @@
-# Balance Sheet Square — GitHub Pages edition
+# My Wealth Square — GitHub Pages website
 
-An interactive, responsive personal balance sheet visualizer in English, Malay, and Chinese.
+Official public website and supporting files for **My Wealth Square**, a personal wealth monitoring and retirement-planning application.
 
-## Fastest deployment: upload the ready-made files
+My Wealth Square adapts the balance-sheet idea for personal finance: assets on one side, liabilities and equity on the other, with progress monitoring and retirement simulation connected to the same financial picture.
 
-Use the separate `balance-sheet-square-github-upload.zip` package. Unzip it, then upload **the contents** (`index.html`, `.nojekyll`, `favicon.svg`, and the `assets` folder) to the root of your GitHub repository.
+## Public website
 
-In the repository, open **Settings → Pages**. Under **Build and deployment**, choose **Deploy from a branch**, then select **main** and **/(root)**. Save and wait for GitHub Pages to publish.
+https://lbp1122.github.io/balance-sheet-square/
 
-Recommended repository name: `balance-sheet-square`. The public URL will be:
+The existing repository name is intentionally retained so current GitHub Pages links, Google Play references and deployment paths are not broken merely by the product-name change.
 
-`https://lbp1122.github.io/balance-sheet-square/`
+## Website files
 
-To use the root address `https://lbp1122.github.io/`, the repository must be named exactly `lbp1122.github.io`. Do this only if you want this calculator to replace the current root website.
+The public website is served directly from the repository root using GitHub Pages. Core website files include `index.html`, `styles.css`, `site.js`, `privacy.html`, `support.html`, the web app manifest, icons and supporting assets.
 
-## Edit and rebuild
+## Android app
 
-Requirements: Node.js 20 or newer.
+The `android-app` folder contains the Android project associated with My Wealth Square. The user-facing product name may change without changing the Android package/application ID, which helps preserve upgrade continuity for existing installations and Google Play releases.
 
-```bash
-npm install
-npm run dev
-```
+## Privacy and security
 
-Edit the wording and calculations in `src/App.jsx`. Edit the design in `src/styles.css`.
+Core financial calculations are designed to run locally on the user's device. Do not commit passwords, API keys, signing credentials, private financial records or other secrets to this public repository.
 
-Create a fresh upload package with:
+## Intellectual property
 
-```bash
-npm run build
-```
+© 2026 Looi Boon Ping. All rights reserved.
 
-Upload the contents of `dist/` to the GitHub Pages publishing branch or folder.
+**My Wealth Square**, its visual identity, software, documentation, reports, financial-modelling methodology and related original materials are proprietary to their respective owner except where expressly licensed or otherwise permitted by law.
 
-## How interactivity works
-
-GitHub Pages serves the generated HTML, CSS, and JavaScript. Calculations, language switching, scenarios, proportional blocks, and browser saving all run directly on the visitor's device. No database or server is required. Each visitor's figures remain in that visitor's browser storage.
-
-The web edition installs a service worker after the first successful visit, allowing later offline use. The `android-app` folder contains a separate Google Play project with a bundled, fully offline copy of the calculator and native PDF saving and sharing. Play listing and release guidance are in `play-store`.
-
-## Security
-
-The package contains no password, ChatGPT credential, API key, or private financial data. A public GitHub repository exposes its source code, so never add passwords or secret keys to these files.
+Publication of source files in this repository does not by itself grant permission to copy, reproduce, redistribute, rebrand, commercially exploit or create a substantially derived product from protected original materials beyond rights that may apply under law or an expressly stated licence.
