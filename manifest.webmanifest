@@ -1,7 +1,7 @@
 {
-  "name": "Balance Sheet Square",
-  "short_name": "Balance Square",
-  "description": "See your assets, debts, net worth and ratios in one clear square.",
+  "name": "My Wealth Square",
+  "short_name": "Wealth Square",
+  "description": "See your wealth clearly, monitor progress and explore retirement scenarios in one structured personal-finance system.",
   "id": "./",
   "start_url": "./",
   "scope": "./",
