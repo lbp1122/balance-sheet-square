@@ -1,4 +1,0 @@
-Target: https://lbp1122.github.io/my-wealth-square/
-Repository rename required: balance-sheet-square -> my-wealth-square
-Keep Android package ID unchanged: com.lbp.balancesheetsquare
-After rename, verify: /, /privacy.html, /support.html, Google Play buttons.
