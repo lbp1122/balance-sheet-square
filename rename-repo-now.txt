@@ -1,0 +1,1 @@
+Manual GitHub repository setting required: rename this repository to my-wealth-square. This file can be removed after migration.
